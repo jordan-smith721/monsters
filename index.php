@@ -34,6 +34,12 @@ $f3->route("GET /", function(){
     $dracula->attack();
     $dracula->attack();
     echo $dracula->getVictims();
+
+    $wolfy = new Warewolf();
+    $wolfy->attack();
+    $wolfy->attack();
+    $wolfy->attack();
+    echo $wolfy->getChanges();
 });
 
 //Run fat free
