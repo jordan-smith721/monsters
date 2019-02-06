@@ -15,6 +15,14 @@ require_once 'vendor/autoload.php';
 //Create an instance of the Base class
 $f3 = Base::instance();
 
+//default route
+$f3->route("GET /", function(){
+    $monster = new Monster('dragon');
+    echo $monster->getName();
+    $monster->setName('dragon2');
+    echo $monster->getName();
+    $monster->attack();
+});
 
 //Run fat free
 $f3->run();
