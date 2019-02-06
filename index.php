@@ -15,13 +15,25 @@ require_once 'vendor/autoload.php';
 //Create an instance of the Base class
 $f3 = Base::instance();
 
+//fat free error reporting
+$f3->set('DEBUG', 3);
+
 //default route
 $f3->route("GET /", function(){
+    //test monster
     $monster = new Monster('dragon');
     echo $monster->getName();
     $monster->setName('dragon2');
     echo $monster->getName();
     $monster->attack();
+
+    //test vampire
+    $dracula = new Vampire("Dracula");
+    $dracula->attack();
+    $dracula->attack();
+    $dracula->attack();
+    $dracula->attack();
+    echo $dracula->getVictims();
 });
 
 //Run fat free
